@@ -5,10 +5,11 @@ use ToDo\Validation;
 ?>
 
 <div class="container">
-<?php if(isset($_POST['save'])):?>
-    <?php Validation::validate($_POST);?>
-<?php endif;?>
-<?php if(Validation::$validationErrors || empty($_POST)):?>
+    <div class="errors">
+        <?php foreach(Validation::$validationErrors as $error): ?>
+            <div class="alert alert-danger"><?=$error;?></div>
+        <?php endforeach; ?>
+    </div>
     <div class="card">
         <form method="post">
         <div class="form-group">
@@ -32,6 +33,5 @@ use ToDo\Validation;
         <button type="submit" class="btn btn-primary" name ="save">SUBMIT</button>
         </form>
     </div>
-<?php endif;?>
 </div>
 <?php require 'views/_partials/htmlEnd.php';?>

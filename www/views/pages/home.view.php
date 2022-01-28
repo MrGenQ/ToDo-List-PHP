@@ -19,7 +19,7 @@
                     <li><?="Status: Complete";?></li>
                 <?php endif;?>
 
-                <a href="/delete-task/id/<?=$task['id'];?>" onclick="return confirm('Are you sure you want to romove it?')">Remove</a>
+                <a href="/delete-task/id/<?=$task['id'];?>" onclick="return confirm('Are you sure you want to Remove')">Remove</a>
                 <?php if($task['status'] === '0'):?>
                     <a href="/set-complete/id/<?=$task['id'];?>" onclick="return confirm('Are you sure task is complete?')">Incomplete</a>
                     <?php else:?>
